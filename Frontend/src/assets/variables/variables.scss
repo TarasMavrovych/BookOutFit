@@ -1,5 +1,5 @@
-@import "./typography-variables.scss";
-@import "./color-variables.scss";
-@import "./margin-variables.scss";
-@import "./padding-variables.scss";
-@import "./border-radius-variables.scss";
+@forward "./color-variables";
+@forward "./typography-variables";
+@forward "./margin-variables";
+@forward "./padding-variables";
+@forward "./border-radius-variables";
