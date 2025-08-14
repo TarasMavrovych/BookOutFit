@@ -7,14 +7,14 @@ import { NewsDataProps } from "@/features/news/types/news";
 export default async function NewsPage({
   searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     title?: string;
     category?: "general" | "promotion" | "event";
     sort?: string;
     order?: "ASC" | "DESC";
     page?: string;
     limit?: string;
-  };
+  }>;
 }) {
   const params = await searchParams;
   try {
