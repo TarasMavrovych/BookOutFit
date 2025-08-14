@@ -14,7 +14,7 @@ export default async function NewsPage({
   params: Params;
   searchParams: SearchParams;
 }) {
-  const sp = await searchParams;
+  const sp =  searchParams;
 
   const newParams = objectToCleanURLSearchParams(sp);
   const { id } =  params;
