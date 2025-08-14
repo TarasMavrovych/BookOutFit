@@ -11,8 +11,8 @@ export default async function BooksPage({
   params,
   searchParams,
 }: {
-  params: Params;
-  searchParams: SearchParams;
+  params: Promise<Params>;
+  searchParams: Promise<SearchParams>;
 }) {
   const sp = await searchParams;
 
