@@ -11,14 +11,14 @@ export default async function BooksPage({
   params,
   searchParams,
 }: {
-  params: Promise<Params>;
-  searchParams: Promise<SearchParams>;
+  params: Params;
+  searchParams: SearchParams;
 }) {
-  const sp = await searchParams;
+  const sp =  searchParams;
 
   const newParams = objectToCleanURLSearchParams(sp);
-  const { id } = await params;
-  const { title, published } = await searchParams;
+  const { id } =  params;
+  const { title, published } =  searchParams;
   const page = parseInt(id, 10) || 1;
 
   const data = await getAllBooks({
