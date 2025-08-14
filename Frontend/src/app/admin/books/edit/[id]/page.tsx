@@ -4,9 +4,9 @@ import EditBookForm from "@/admin/books/components/edit-form/EditBookForm";
 export default async function EditBookPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
+  const { id } = params;
 
   const book = await getOneBook(id);
 
