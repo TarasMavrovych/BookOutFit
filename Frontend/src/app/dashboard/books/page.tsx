@@ -53,7 +53,7 @@ async function fetchBooksData(filters: ReturnType<typeof buildFilters>) {
 }
 
 export default async function BookPage({ searchParams }: BookProps) {
-    const rawSearchParams = await searchParams;
+    const rawSearchParams = searchParams;
     const filters = buildFilters(rawSearchParams);
     let books: Book[] = [];
     let allCategoryBooks: Book[] = [];
