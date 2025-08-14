@@ -10,7 +10,7 @@ import {
 } from "@/shared/hooks/get-param/getParam.hook";
 
 type BookProps = {
-    searchParams: { [key: string]: string | string[] | undefined };
+    searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 function buildFilters(searchParams: BookProps["searchParams"]) {
@@ -53,7 +53,7 @@ async function fetchBooksData(filters: ReturnType<typeof buildFilters>) {
 }
 
 export default async function BookPage({ searchParams }: BookProps) {
-    const rawSearchParams = searchParams;
+    const rawSearchParams = searchParams ?? {};
     const filters = buildFilters(rawSearchParams);
     let books: Book[] = [];
     let allCategoryBooks: Book[] = [];
