@@ -5,9 +5,9 @@ import { getOneBook } from "@/features/books/api/books";
 export default async function BookFindOne({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
+  const { id } =  params;
   const book = await getOneBook(id);
   return (
     <>
