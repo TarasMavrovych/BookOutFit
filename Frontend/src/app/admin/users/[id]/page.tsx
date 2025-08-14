@@ -8,9 +8,9 @@ type Params = { id: string };
 export default async function UsersPage({
   params,
 }: {
-  params: Promise<Params>;
+  params: Params;
 }) {
-  const { id } = await params;
+  const { id } =  params;
   const page = parseInt(id, 10) || 1;
 
   const data = await getAllUsers({ page });
