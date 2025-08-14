@@ -6,9 +6,9 @@ type Params = { id: string };
 export default async function EditNewsPage({
   params,
 }: {
-  params: Promise<Params>;
+  params: Params;
 }) {
-  const { id } = await params;
+  const { id } =  params;
   const news = await getOneNews(id);
 
   return (
