@@ -11,14 +11,14 @@ export default async function NewsPage({
   params,
   searchParams,
 }: {
-  params: Promise<Params>;
-  searchParams: Promise<SearchParams>;
+  params: Params;
+  searchParams: SearchParams;
 }) {
   const sp = await searchParams;
 
   const newParams = objectToCleanURLSearchParams(sp);
-  const { id } = await params;
-  const { title, category } = await searchParams;
+  const { id } =  params;
+  const { title, category } =  searchParams;
   const page = parseInt(id, 10) || 1;
 
   const data = await getAllNews({
