@@ -4,9 +4,9 @@ import { getOneNews } from "@/admin/news/api/news";
 export default async function OneNews({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
+  const { id } =  params;
   const news = await getOneNews(id);
   return <NewsItem news={news} />;
 }
