@@ -9,9 +9,9 @@ import {
     getParam,
 } from "@/shared/hooks/get-param/getParam.hook";
 
-type BookProps = {
-    searchParams?: { [key: string]: string | string[] | undefined };
-};
+// type BookProps = {
+//     searchParams?: { [key: string]: string | string[] | undefined };
+// };
 
 function buildFilters(searchParams: { [key: string]: string | string[] | undefined }) {
     return {
