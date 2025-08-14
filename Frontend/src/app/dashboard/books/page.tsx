@@ -13,7 +13,7 @@ type BookProps = {
     searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-function buildFilters(searchParams: BookProps["searchParams"]) {
+function buildFilters(searchParams: { [key: string]: string | string[] | undefined }) {
     return {
         page: Number(searchParams.page) || 1,
         limit: Number(searchParams.limit) || 18,
@@ -52,9 +52,12 @@ async function fetchBooksData(filters: ReturnType<typeof buildFilters>) {
     );
 }
 
-export default async function BookPage({ searchParams }: BookProps) {
-    const rawSearchParams = searchParams ?? {};
-    const filters = buildFilters(rawSearchParams);
+export default async function BookPage({
+  searchParams = {},
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
+  const filters = buildFilters(searchParams);
     let books: Book[] = [];
     let allCategoryBooks: Book[] = [];
     let currentPage = 1;
